@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class ValidateUsername {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a username:");
+        String username = scanner.nextLine();
+        boolean isValid = isValidUsername(username);
+        if (isValid) {
+            System.out.println("Valid username.");
+        } else {
+            System.out.println("Invalid username.");
+        }
+        scanner.close();
+    }
+    public static boolean isValidUsername(String username) {
+        return username.matches("[a-zA-Z0-9_]+") && username.length() >= 3 && username.length() <= 20;
+    }
+}
