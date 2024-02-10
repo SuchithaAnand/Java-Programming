@@ -1,0 +1,38 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter names (one per line, type 'done' to finish):");
+        String[] names = getNames(scanner);
+        System.out.print("Enter sorting order (A for Ascending, D for Descending): ");
+        char sortOrder = scanner.next().charAt(0);
+        sortNames(names, sortOrder);
+        System.out.println("Sorted Names:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+        scanner.close();
+    }
+    private static String[] getNames(Scanner scanner) {
+        int capacity = 5;
+        String[] names = new String[capacity];
+        int count = 0;
+        String input;
+        while (!(input = scanner.nextLine().trim()).equalsIgnoreCase("done")) {
+            if (count == names.length) {
+                names = Arrays.copyOf(names, 2 * capacity);
+                capacity *= 2;
+            }
+            names[count++] = input;
+        }
+        return Arrays.copyOf(names, count);
+    }
+    private static void sortNames(String[] names, char sortOrder) {
+        if (sortOrder == 'A' || sortOrder == 'a') {
+            Arrays.sort(names);
+        } else if (sortOrder == 'D' || sortOrder == 'd') {
+            Arrays.sort(names, (a, b) -> b.compareTo(a));
+        }
+    }
+}
