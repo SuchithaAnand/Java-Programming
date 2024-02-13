@@ -1,0 +1,14 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+public class SortHashMap {
+    public static void main(String[] args) {
+        HashMap<Integer, String> unsortedMap = new HashMap<>();
+        unsortedMap.put(3, "Apple");
+        unsortedMap.put(1, "Banana");
+        unsortedMap.put(2, "Orange");
+        System.out.println("Unsorted HashMap: " + unsortedMap);
+        TreeMap<Integer, String> sortedMap = new TreeMap<>(unsortedMap);
+        System.out.println("Sorted TreeMap: " + sortedMap);
+    }
+}

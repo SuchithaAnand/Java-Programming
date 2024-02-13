@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class RectangleSymbolPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the symbol to use in the pattern: ");
+        char symbol = scanner.next().charAt(0);
+        System.out.print("Enter the number of rows in the rectangle: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter the number of columns in the rectangle: ");
+        int cols = scanner.nextInt();
+        printRectangleSymbolPattern(symbol, rows, cols);
+
+        scanner.close();
+    }
+    private static void printRectangleSymbolPattern(char symbol, int rows, int cols) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(symbol + " ");
+            }
+            System.out.println();
+        }
+    }
+}

@@ -1,0 +1,26 @@
+import org.apache.poi.ss.usermodel.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+public class ReadExcel {
+    public static void main(String[] args) {
+        try {
+            String filePath = "data.xlsx";
+            FileInputStream fis = new FileInputStream(new File(filePath));
+            Workbook workbook = WorkbookFactory.create(fis);
+            Sheet sheet = workbook.getSheetAt(0);
+            Row rowEmail = sheet.getRow(0);
+            Cell cellEmail = rowEmail.getCell(0);
+            String email = cellEmail.getStringCellValue();
+            Row rowPassword = sheet.getRow(0);
+            Cell cellPassword = rowPassword.getCell(1);
+            String password = cellPassword.getStringCellValue();
+            System.out.println("Email: " + email);
+            System.out.println("Password: " + password);
+            workbook.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

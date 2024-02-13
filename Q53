@@ -1,0 +1,68 @@
+import java.util.Scanner;
+public class SelectionIterationMenu {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("Select an option:");
+            System.out.println("1. If-else statement");
+            System.out.println("2. Switch statement");
+            System.out.println("3. For loop");
+            System.out.println("4. While loop");
+            System.out.println("5. Do-while loop");
+            System.out.println("0. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Syntax of if-else statement:");
+                    System.out.println("if (condition) {");
+                    System.out.println("    // Code to execute if condition is true");
+                    System.out.println("} else {");
+                    System.out.println("    // Code to execute if condition is false");
+                    System.out.println("}");
+                    break;
+                case 2:
+                    System.out.println("Syntax of switch statement:");
+                    System.out.println("switch (expression) {");
+                    System.out.println("    case value1:");
+                    System.out.println("        // Code to execute if expression matches value1");
+                    System.out.println("        break;");
+                    System.out.println("    case value2:");
+                    System.out.println("        // Code to execute if expression matches value2");
+                    System.out.println("        break;");
+                    System.out.println("    default:");
+                    System.out.println("        // Code to execute if expression does not match any case");
+                    System.out.println("}");
+                    break;
+                case 3:
+                    System.out.println("Syntax of for loop:");
+                    System.out.println("for (initialization; condition; iteration) {");
+                    System.out.println("    // Code to execute repeatedly until condition is false");
+                    System.out.println("}");
+                    break;
+                case 4:
+                    System.out.println("Syntax of while loop:");
+                    System.out.println("while (condition) {");
+                    System.out.println("    // Code to execute repeatedly until condition is false");
+                    System.out.println("}");
+                    break;
+                case 5:
+                    System.out.println("Syntax of do-while loop:");
+                    System.out.println("do {");
+                    System.out.println("    // Code to execute at least once and repeatedly until condition is false");
+                    System.out.println("} while (condition);");
+                    break;
+                case 0:
+                    System.out.println("Exiting the program.");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
+            }
+            System.out.println(); 
+        } while (choice != 0);
+
+        scanner.close();
+    }
+}

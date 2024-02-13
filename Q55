@@ -1,0 +1,17 @@
+public class Overload {
+    public void assignValues(int a) {
+        System.out.println("Assigning value " + a + " to variable 'a'");
+    }
+    public void assignValues(int a, int b) {
+        System.out.println("Assigning value " + a + " to variable 'a'");
+        System.out.println("Assigning value " + b + " to variable 'b'");
+    }
+
+    public static void main(String[] args) {
+        Overload overload = new Overload();
+        overload.assignValues(10);
+
+        System.out.println();
+        overload.assignValues(20, 30);
+    }
+}
