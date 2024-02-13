@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class RemoveVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        String resultString = removeVowels(inputString);
+        System.out.println("The string without vowels is: " + resultString);
+
+        scanner.close();
+    }
+    private static String removeVowels(String inputString) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+            if (!isVowel(currentChar)) {
+                result.append(currentChar);
+            }
+        }
+        return result.toString();
+    }
+    private static boolean isVowel(char c) {
+        c = Character.toLowerCase(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+}
