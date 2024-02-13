@@ -5,8 +5,8 @@
 ## Expt 2:
 ![2](https://github.com/DevadarshiniJayamurugan/Java/assets/100745306/9b8b6469-a5ab-4eb2-a282-db051c5b4954)
 
-## Expt 3:
-![3](https://github.com/DevadarshiniJayamurugan/Java/assets/100745306/6afa70d6-a7c5-45f5-8bec-fa5c34761163)
+
+
 
 ## Expt 4:
 ![4](https://github.com/DevadarshiniJayamurugan/Java/assets/100745306/fb2b7ed6-3c3f-46e4-91be-198e1cf6d777)
