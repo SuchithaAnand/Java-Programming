@@ -1,0 +1,31 @@
+def remove_duplicates(arr):
+    unique_items = list(set(arr))
+    return unique_items
+
+def main():
+    n = int(input("Enter the number of elements in array: "))
+    arr = []
+
+    for i in range(1, n + 1):
+        element = int(input(f"Enter element{i}: "))
+        arr.append(element)
+
+    non_duplicate_items = remove_duplicates(arr)
+    print("Non-duplicate items:")
+    print(non_duplicate_items)
+
+# Sample Input:
+# Enter the number of elements in array: 7
+# Enter element1: 10
+# Enter element2: 20
+# Enter element3: 20
+# Enter element4: 30
+# Enter element5: 40
+# Enter element6: 40
+# Enter element7: 50
+# Sample Output:
+# Non-duplicate items:
+# [10, 20, 30, 40, 50]
+
+if __name__ == "__main__":
+    main()

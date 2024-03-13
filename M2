@@ -1,0 +1,38 @@
+def find_max_min_sum_diff(arr, m, n):
+    arr.sort()
+    mth_max = arr[-m]
+    nth_min = arr[n - 1]
+    return mth_max, nth_min, mth_max + nth_min, abs(mth_max - nth_min)
+
+def main():
+    arr = [int(x) for x in input("Array of elements = ").split(",")]
+    m = int(input("M = "))
+    n = int(input("N = "))
+
+    mth_max, nth_min, summation, difference = find_max_min_sum_diff(arr, m, n)
+
+    print(f"1stMaximum Number = {mth_max}")
+    print(f"{n}rdMinimum Number = {nth_min}")
+    print(f"Sum = {summation}")
+    print(f"Difference = {difference}")
+
+# Test cases
+test_cases = [
+    ([16, 16, 16, 16, 16], 0, 1),
+    ([0, 0, 0, 0], 1, 2),
+    ([-12, -78, -35, -42, -85], 3, 3),
+    ([15, 19, 34, 56, 12], 6, 3),
+    ([85, 45, 65, 75, 95], 5, 7)
+]
+
+for idx, (arr, m, n) in enumerate(test_cases, start=1):
+    print(f"Test case {idx}:")
+    mth_max, nth_min, summation, difference = find_max_min_sum_diff(arr, m, n)
+    print(f"1stMaximum Number = {mth_max}")
+    print(f"{n}rdMinimum Number = {nth_min}")
+    print(f"Sum = {summation}")
+    print(f"Difference = {difference}")
+    print()
+
+if __name__ == "__main__":
+    main()

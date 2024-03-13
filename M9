@@ -1,0 +1,28 @@
+def main():
+    positive_numbers = []
+    negative_numbers = []
+    num = 0
+
+    while num != -1:
+        num = float(input("Enter the number: "))
+        if num == -1:
+            break
+        elif num < 0:
+            negative_numbers.append(num)
+        else:
+            positive_numbers.append(num)
+
+    if len(positive_numbers) > 0:
+        avg_positive = sum(positive_numbers) / len(positive_numbers)
+        print("The average of positive numbers is:", avg_positive)
+    else:
+        print("No positive numbers were entered.")
+
+    if len(negative_numbers) > 0:
+        avg_negative = sum(negative_numbers) / len(negative_numbers)
+        print("The average of negative numbers is:", avg_negative)
+    else:
+        print("No negative numbers were entered.")
+
+if __name__ == "__main__":
+    main()

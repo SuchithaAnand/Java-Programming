@@ -1,0 +1,30 @@
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        String data = "Computer Science and Engineering";
+        String filename = "data.txt";
+
+        // Writing the string to a file using FileWriter
+        try (FileWriter writer = new FileWriter(filename)) {
+            writer.write(data);
+            System.out.println("Data written to file successfully.");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
+
+        // Reading the string from the file using FileReader
+        try (FileReader reader = new FileReader(filename)) {
+            StringBuilder content = new StringBuilder();
+            int character;
+            while ((character = reader.read()) != -1) {
+                content.append((char) character);
+            }
+            System.out.println("Data read from file: " + content.toString());
+        } catch (IOException e) {
+            System.err.println("Error reading from file: " + e.getMessage());
+        }
+    }
+}

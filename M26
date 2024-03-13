@@ -1,0 +1,21 @@
+import java.util.Hashtable;
+
+public class BankDetails {
+    public static void main(String[] args) {
+        // Create a Hashtable to maintain bank details (Account number as key, Customer name as value)
+        Hashtable<Integer, String> bankDetails = new Hashtable<>();
+
+        // i) Add 3 records
+        bankDetails.put(123456, "John Doe");
+        bankDetails.put(789012, "Jane Smith");
+        bankDetails.put(345678, "Alice Johnson");
+
+        // ii) Display the size of the Hashtable
+        System.out.println("Size of Hashtable: " + bankDetails.size());
+
+        // iii) Clear the Hashtable
+        bankDetails.clear();
+
+        System.out.println("Hashtable cleared. Size after clearing: " + bankDetails.size());
+    }
+}

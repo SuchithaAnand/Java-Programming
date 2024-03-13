@@ -1,0 +1,20 @@
+def count_special_characters(statement):
+    special_characters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+    count = 0
+    for char in statement:
+        if char in special_characters:
+            count += 1
+    return count
+
+def main():
+    given_statement = input("Given statement: ")
+    num_special_characters = count_special_characters(given_statement)
+    print("Number of special Characters:", num_special_characters)
+
+# Sample Input:
+# Given statement: Modi Birthday @ September 17, #&$% is the wishes code for him.
+# Sample Output:
+# Number of special Characters: 5
+
+if __name__ == "__main__":
+    main()

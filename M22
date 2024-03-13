@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        try {
+            // Example 1: ArithmeticException
+            int result = 10 / 0;
+
+            // Example 2: ArrayIndexOutOfBoundsException
+            int[] arr = {1, 2, 3};
+            System.out.println(arr[3]); // Accessing element beyond the array size
+
+            // Example 3: NullPointerException
+            String str = null;
+            System.out.println(str.length()); // Trying to invoke a method on a null reference
+        } catch (ArithmeticException | ArrayIndexOutOfBoundsException | NullPointerException e) {
+            // Multi-catch block to handle all exceptions
+            System.out.println("Exception occurred: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,31 @@
+// Superclass with a static variable and a static method
+class Superclass {
+    static int x = 10;
+
+    static void display() {
+        System.out.println("Static method in superclass");
+    }
+}
+
+// Subclass hiding the static variable and static method of superclass
+class Subclass extends Superclass {
+    static int x = 20;
+
+    static void display() {
+        System.out.println("Static method in subclass");
+    }
+    
+    // Parametrized constructor calling the constructor of the superclass using super()
+    Subclass(int x) {
+        super(); // Call to superclass constructor
+        System.out.println("Value of x in superclass: " + Superclass.x);
+        System.out.println("Value of x in subclass: " + x);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Subclass sub = new Subclass(30); // Creating object of Subclass
+        sub.display(); // Calling static method in Subclass
+    }
+}

@@ -1,0 +1,31 @@
+class SingleObject {
+    private static SingleObject instance;
+
+    private SingleObject() {
+        // Private constructor to prevent instantiation outside of this class
+    }
+
+    public static SingleObject getInstance() {
+        if (instance == null) {
+            instance = new SingleObject();
+            return instance;
+        } else {
+            throw new IllegalStateException("Cannot create more than one instance of SingleObject");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            SingleObject obj1 = SingleObject.getInstance();
+            System.out.println("Object 1 created successfully");
+
+            // Attempt to create a second object
+            SingleObject obj2 = SingleObject.getInstance(); // This will throw an exception
+            System.out.println("Object 2 created successfully");
+        } catch (IllegalStateException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}

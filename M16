@@ -1,0 +1,43 @@
+// Bank class with a method to get the rate of interest
+class Bank {
+    double getRateOfInterest() {
+        return 0.0; // Default implementation, overridden by child classes
+    }
+}
+
+// SBI class inheriting from Bank
+class SBI extends Bank {
+    @Override
+    double getRateOfInterest() {
+        return 8.4;
+    }
+}
+
+// ICICI class inheriting from Bank
+class ICICI extends Bank {
+    @Override
+    double getRateOfInterest() {
+        return 7.3;
+    }
+}
+
+// AXIS class inheriting from Bank
+class AXIS extends Bank {
+    @Override
+    double getRateOfInterest() {
+        return 9.7;
+    }
+}
+
+// Main class to test the program
+public class Main {
+    public static void main(String[] args) {
+        SBI sbi = new SBI();
+        ICICI icici = new ICICI();
+        AXIS axis = new AXIS();
+
+        System.out.println("Rate of interest provided by SBI: " + sbi.getRateOfInterest() + "%");
+        System.out.println("Rate of interest provided by ICICI: " + icici.getRateOfInterest() + "%");
+        System.out.println("Rate of interest provided by AXIS: " + axis.getRateOfInterest() + "%");
+    }
+}

@@ -1,0 +1,26 @@
+def calculate_total_balance(denominations, notes):
+    total_balance = 0
+    for denom, note in zip(denominations, notes):
+        total_balance += denom * note
+    return total_balance
+
+def main():
+    denominations = []
+    notes = []
+
+    for i in range(4):
+        denomination = int(input(f"Enter the {i+1}st Denomination: "))
+        denominations.append(denomination)
+        note = int(input(f"Enter the {i+1}st Denomination number of notes: "))
+        notes.append(note)
+
+    total_balance = calculate_total_balance(denominations, notes)
+    print(f"Total Available Balance in ATM: {total_balance}")
+
+# Sample input
+# denominations = [500, 100, 200, 2000]
+# notes = [4, 20, 32, 1]
+# Total Available Balance in ATM: 12400
+
+if __name__ == "__main__":
+    main()

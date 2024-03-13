@@ -1,0 +1,19 @@
+def nth_largest_number(arr, n):
+    sorted_arr = sorted(arr, reverse=True)
+    return sorted_arr[n - 1]
+
+def main():
+    arr = [int(x) for x in input("List: ").split(",")]
+    n = int(input("N: "))
+    
+    nth_largest = nth_largest_number(arr, n)
+    print(f"{n}th Largest number: {nth_largest}")
+
+# Sample Input:
+# List: 14, 67, 48, 23, 5, 62
+# N: 4
+# Sample Output:
+# 4th Largest number: 23
+
+if __name__ == "__main__":
+    main()

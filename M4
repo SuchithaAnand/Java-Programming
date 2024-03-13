@@ -1,0 +1,35 @@
+from random import choice
+
+def is_palindrome(input_str):
+    input_str = str(input_str).lower().replace(" ", "")  # Convert to lowercase and remove spaces
+    return input_str == input_str[::-1]
+
+def main():
+    case = int(input("Case (1 for string, 2 for number): "))
+    
+    if case == 1:
+        input_str = input("String: ")
+        if is_palindrome(input_str):
+            print("Palindrome")
+        else:
+            print("Not a palindrome")
+    elif case == 2:
+        input_num = input("Number: ")
+        if input_num.isdigit():
+            if is_palindrome(input_num):
+                print("Palindrome")
+            else:
+                print("Not a palindrome")
+        else:
+            print("Invalid input. Please enter a valid number.")
+    else:
+        print("Invalid case. Please enter either 1 or 2.")
+
+# Sample Input:
+# Case = 1
+# String = MADAM
+# Sample Output:
+# Palindrome
+
+if __name__ == "__main__":
+    main()
