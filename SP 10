@@ -1,0 +1,40 @@
+public class MyClass {
+    // Final variable
+    final int finalVariable = 10;
+    
+    public static void main(String[] args) {
+        // Accessing final variable
+        MyClass obj = new MyClass();
+        System.out.println("Final variable value: " + obj.finalVariable);
+    }
+}
+public class MyClass {
+    // Final method
+    final void finalMethod() {
+        System.out.println("This is a final method.");
+    }
+    
+    public static void main(String[] args) {
+        // Creating an object of the class
+        MyClass obj = new MyClass();
+        
+        // Calling final method
+        obj.finalMethod();
+    }
+}
+// Final class
+final class FinalClass {
+    void display() {
+        System.out.println("This is a final class.");
+    }
+}
+
+public class MyClass {
+    public static void main(String[] args) {
+        // Creating an object of the final class
+        FinalClass obj = new FinalClass();
+        
+        // Calling method of final class
+        obj.display();
+    }
+}

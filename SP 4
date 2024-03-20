@@ -1,0 +1,39 @@
+public class MethodOverloading {
+    // Method overloading by increasing the number of parameters
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+    public int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method overloading by changing the data types of parameters
+    public double sum(double a, double b) {
+        return a + b;
+    }
+
+    // Method overloading by interchanging the parameters
+    public int sum(int a, double b) {
+        return (int)(a + b);
+    }
+
+    public int sum(double a, int b) {
+        return (int)(a + b);
+    }
+
+    public static void main(String[] args) {
+        MethodOverloading obj = new MethodOverloading();
+
+        // Overloaded methods with different number of parameters
+        System.out.println("Sum of 5 and 10: " + obj.sum(5, 10));
+        System.out.println("Sum of 5, 10, and 15: " + obj.sum(5, 10, 15));
+
+        // Overloaded methods with different data types of parameters
+        System.out.println("Sum of 5.5 and 10.5: " + obj.sum(5.5, 10.5));
+
+        // Overloaded methods with interchanged parameters
+        System.out.println("Sum of 5 and 10.5: " + obj.sum(5, 10.5));
+        System.out.println("Sum of 5.5 and 10: " + obj.sum(5.5, 10));
+    }
+}

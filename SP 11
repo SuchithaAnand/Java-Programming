@@ -1,0 +1,83 @@
+public class MyClass {
+    // Instance variable
+    private int x;
+
+    // Constructor initializing instance variable
+    public MyClass(int x) {
+        // Using 'this' keyword to reference instance variable
+        this.x = x;
+    }
+
+    // Method using 'this' to reference instance variable
+    public void printX() {
+        System.out.println("Value of x: " + this.x);
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass(10);
+        obj.printX();
+    }
+}
+public class MyClass {
+    private int x;
+    private int y;
+
+    // Constructor 1
+    public MyClass(int x) {
+        // Invoking another constructor using 'this' keyword
+        this(x, 0);
+    }
+
+    // Constructor 2
+    public MyClass(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass(10);
+        MyClass obj2 = new MyClass(20, 30);
+    }
+}
+public class MyClass {
+    private int x;
+
+    // Constructor
+    public MyClass(int x) {
+        this.x = x;
+    }
+
+    // Method to pass current object as a parameter
+    public void displayObject(MyClass obj) {
+        System.out.println("Value of x in passed object: " + obj.x);
+    }
+
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass(10);
+        MyClass obj2 = new MyClass(20);
+
+        // Passing current object as a parameter
+        obj1.displayObject(obj1);
+        obj2.displayObject(obj2);
+    }
+}
+public class MyClass {
+    private int x;
+
+    // Constructor
+    public MyClass(int x) {
+        this.x = x;
+    }
+
+    // Method returning current object
+    public MyClass getObject() {
+        return this;
+    }
+
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass(10);
+        MyClass obj2 = obj1.getObject();
+
+        System.out.println("Value of x in obj2: " + obj2.x);
+    }
+}

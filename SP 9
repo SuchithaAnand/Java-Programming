@@ -1,0 +1,44 @@
+public class MyClass {
+    // Static variable
+    static int staticVariable = 10;
+    
+    public static void main(String[] args) {
+        // Accessing static variable
+        System.out.println("Static variable value: " + staticVariable);
+    }
+}
+public class MyClass {
+    // Static method
+    static void staticMethod() {
+        System.out.println("This is a static method.");
+    }
+    
+    public static void main(String[] args) {
+        // Calling static method
+        staticMethod();
+    }
+}
+public class MyClass {
+    // Static block
+    static {
+        System.out.println("This is a static block.");
+    }
+    
+    public static void main(String[] args) {
+        // Static block will execute automatically when the class is loaded
+    }
+}
+public class OuterClass {
+    // Static nested class
+    static class StaticNestedClass {
+        void display() {
+            System.out.println("This is a static nested class.");
+        }
+    }
+    
+    public static void main(String[] args) {
+        // Creating an object of the static nested class
+        StaticNestedClass nestedObj = new StaticNestedClass();
+        nestedObj.display();
+    }
+}

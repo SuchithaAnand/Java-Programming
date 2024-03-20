@@ -1,0 +1,32 @@
+public class MyGenericClass<T> {
+    private T value;
+
+    // Constructor
+    public MyGenericClass(T value) {
+        this.value = value;
+    }
+
+    // Getter and setter methods
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    // Method to display information about the value
+    public void displayInfo() {
+        System.out.println("Value: " + value);
+    }
+
+    public static void main(String[] args) {
+        // Creating an object of MyGenericClass with Integer type parameter
+        MyGenericClass<Integer> intObj = new MyGenericClass<>(10);
+        intObj.displayInfo(); // Output: Value: 10
+
+        // Creating an object of MyGenericClass with String type parameter
+        MyGenericClass<String> strObj = new MyGenericClass<>("Hello");
+        strObj.displayInfo(); // Output: Value: Hello
+    }
+}

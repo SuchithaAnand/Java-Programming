@@ -1,0 +1,50 @@
+import java.util.Scanner;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
+
+public class InputScanner {
+    public static void main(String[] args) {
+        // Get the current time
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        String currentTime = sdf.format(cal.getTime());
+
+        // Check if the current time is between 01:00 PM and 02:00 PM
+        if (currentTime.compareTo("13:00") >= 0 && currentTime.compareTo("14:00") < 0) {
+            Scanner scanner = new Scanner(System.in);
+
+            // Getting input for char
+            System.out.print("Enter a character: ");
+            char charInput = scanner.next().charAt(0);
+
+            // Getting input for String
+            System.out.print("Enter a string: ");
+            String stringInput = scanner.next();
+
+            // Getting input for int
+            System.out.print("Enter an integer: ");
+            int intInput = scanner.nextInt();
+
+            // Getting input for float
+            System.out.print("Enter a float: ");
+            float floatInput = scanner.nextFloat();
+
+            // Getting input for double
+            System.out.print("Enter a double: ");
+            double doubleInput = scanner.nextDouble();
+
+            // Printing the inputs
+            System.out.println("\nInput received:");
+            System.out.println("Char: " + charInput);
+            System.out.println("String: " + stringInput);
+            System.out.println("Integer: " + intInput);
+            System.out.println("Float: " + floatInput);
+            System.out.println("Double: " + doubleInput);
+
+            // Close the scanner
+            scanner.close();
+        } else {
+            System.out.println("You can only input between 01:00 PM and 02:00 PM.");
+        }
+    }
+}

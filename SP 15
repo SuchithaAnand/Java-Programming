@@ -1,0 +1,21 @@
+public class GenericMethodExample {
+
+    // Generic method to find the maximum of two elements of any type
+    public static <T extends Comparable<T>> T findMax(T x, T y) {
+        return x.compareTo(y) > 0 ? x : y;
+    }
+
+    public static void main(String[] args) {
+        // Calling the generic method with Integer type
+        Integer maxInteger = findMax(5, 10);
+        System.out.println("Maximum of 5 and 10 is: " + maxInteger);
+
+        // Calling the generic method with Double type
+        Double maxDouble = findMax(3.5, 7.8);
+        System.out.println("Maximum of 3.5 and 7.8 is: " + maxDouble);
+
+        // Calling the generic method with String type
+        String maxString = findMax("apple", "banana");
+        System.out.println("Maximum of apple and banana is: " + maxString);
+    }
+}

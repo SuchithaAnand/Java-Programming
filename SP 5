@@ -1,0 +1,94 @@
+import java.util.Arrays;
+
+// Abstract class with 2 abstract methods and 3 concrete methods
+abstract class AbstractMath {
+    // Abstract methods to be implemented by subclasses
+    public abstract int[] total(int[] nums);
+    public abstract double average(int[] nums);
+
+    // Concrete method to calculate the mean of numbers
+    public double mean(int[] nums) {
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        return (double) sum / nums.length;
+    }
+
+    // Concrete method to calculate the mode of numbers
+    public int mode(int[] nums) {
+        int mode = 0, maxCount = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int count = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[j] == nums[i])
+                    count++;
+            }
+            if (count > maxCount) {
+                mode = nums[i];
+                maxCount = count;
+            }
+        }
+        return mode;
+    }
+
+    // Concrete method to calculate the median of numbers
+    public double median(int[] nums) {
+        Arrays.sort(nums);
+        int length = nums.length;
+        if (length % 2 == 0) {
+            return (double) (nums[length / 2 - 1] + nums[length / 2]) / 2;
+        } else {
+            return nums[length / 2];
+        }
+    }
+}
+
+// Concrete class extending the abstract class
+class ConcreteMath extends AbstractMath {
+    // Implementation of abstract method to calculate total of numbers
+    @Override
+    public int[] total(int[] nums) {
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        return new int[]{sum};
+    }
+
+    // Implementation of abstract method to calculate average of numbers
+    @Override
+    public double average(int[] nums) {
+        double sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        return sum / nums.length;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object of ConcreteMath class
+        ConcreteMath math = new ConcreteMath();
+        
+        // Example array of numbers
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        // Using the implemented methods from the abstract class
+        int[] total = math.total(numbers);
+        System.out.println("Total: " + total[0]);
+        
+        double average = math.average(numbers);
+        System.out.println("Average: " + average);
+        
+        double mean = math.mean(numbers);
+        System.out.println("Mean: " + mean);
+        
+        int mode = math.mode(numbers);
+        System.out.println("Mode: " + mode);
+        
+        double median = math.median(numbers);
+        System.out.println("Median: " + median);
+    }
+}

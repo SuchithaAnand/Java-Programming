@@ -1,0 +1,62 @@
+class SuperClass {
+    int x = 10;
+}
+
+class SubClass extends SuperClass {
+    void display() {
+        // Accessing superclass member variable using 'super'
+        System.out.println("Value of x in superclass: " + super.x);
+    }
+    
+    public static void main(String[] args) {
+        SubClass obj = new SubClass();
+        obj.display();
+    }
+}
+class SuperClass {
+    int x;
+    
+    // Superclass constructor
+    SuperClass(int x) {
+        this.x = x;
+    }
+}
+
+class SubClass extends SuperClass {
+    int y;
+    
+    // Subclass constructor
+    SubClass(int x, int y) {
+        // Calling superclass constructor using 'super'
+        super(x);
+        this.y = y;
+    }
+    
+    void display() {
+        System.out.println("Value of x in superclass: " + x);
+        System.out.println("Value of y in subclass: " + y);
+    }
+    
+    public static void main(String[] args) {
+        SubClass obj = new SubClass(10, 20);
+        obj.display();
+    }
+}
+class SuperClass {
+    void display() {
+        System.out.println("This is a method in superclass.");
+    }
+}
+
+class SubClass extends SuperClass {
+    void display() {
+        // Invoking superclass method using 'super'
+        super.display();
+        System.out.println("This is a method in subclass.");
+    }
+    
+    public static void main(String[] args) {
+        SubClass obj = new SubClass();
+        obj.display();
+    }
+}
