@@ -1,0 +1,40 @@
+public class MyClass {
+    private int value;
+
+    public MyClass(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Value: " + value;
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass(10);
+        System.out.println(obj); // Output: Value: 10
+    }
+}
+public class MyClass {
+    private int value;
+
+    public MyClass(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        MyClass other = (MyClass) obj;
+        return value == other.value;
+    }
+
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass(10);
+        MyClass obj2 = new MyClass(10);
+        System.out.println(obj1.equals(obj2)); // Output: true
+    }
+}
